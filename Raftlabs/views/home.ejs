@@ -1,0 +1,88 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/common-table.css">
+</head>
+<body>
+    
+   
+
+   <div class="lop">
+    <main class="py-4">
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Books
+                    </div>
+                    <div class="card-body">
+
+                        <div style="margin-bottom: 20px;">
+
+                            <input type="text" id="filter0" placeholder="FindBy Title">
+                            <input type="text" id="filter1" placeholder="Find By ISBN">
+                            <input type="text" id="filter2" placeholder="Find By Author's email">
+                           
+                            <button><a href="/book/addbook">Add a book</a></button>
+                            <button><a href="/magazine/addmagazine">Add a Magazine</a></button>
+                            <button onclick="sortTable()">Sort by title</button>
+                            
+
+                        </div>
+
+                        <table id="filter" class="table">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>ISBN</th>
+                                    <th>Authors</th>
+                                    <th>Description/PublishedAt</th>
+                                </tr>
+                            </thead>
+                
+                            <tbody>
+
+                                <%for(i of allbooks){%>
+
+                                <tr>
+                                    <td><%=i.title%></td>
+                                    <td><%=i.isbn%></td>
+                                    <td><%=i.authors%></td>
+                                    <td><%=i.description%></td>
+                                </tr>
+                                <%}%>
+
+                                <%for(i of allmagazines){%>
+
+                                    <tr>
+                                        <td><%=i.title%></td>
+                                        <td><%=i.isbn%></td>
+                                        <td><%=i.authors%></td>
+                                        <td><%=i.publishedAt%></td>
+                                    </tr>
+                                    <%}%>
+                
+                                
+                            </tbody>
+                        </table>
+                
+                    </div>
+                </div>    
+                </div>
+            </div>
+
+
+        </div>    
+
+    </main>
+   </div>
+
+    <script src="/js/TableFilter.min.js" defer></script>
+</body>
+
+

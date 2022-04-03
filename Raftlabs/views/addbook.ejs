@@ -1,0 +1,37 @@
+<head>
+    <link rel="stylesheet" href="/css/common-add.css">
+</head>
+
+<body>
+    <!--Conteiner for the edit profile-->
+
+<div class="container common-flex">
+
+    <!--Div for edit profile-->
+    <div class="common-add">
+        <h1>Add Book</h1>
+
+        <!--Form-->
+        <form name="myForm" onsubmit="return validateForm()" action="/book/createbook" method="post">
+            <li><p>Title:</p><input type="text" name="title"     required> </li>
+
+            <li><p>ISBN:</p><input type="number"  name="isbn"    required> </li>
+
+            <li><p>Author's Email:</p><input type="email" name="authors"     required> </li>
+
+            <li><p>Description:</p><input type="text" name="description"    required> </li>
+
+            
+       
+            <button type="submit" >Save</button>
+        
+       
+      
+        </form>
+
+    
+    </div>
+</div>
+<script src="/js/form_validation.js" ></script>
+</body>
+
